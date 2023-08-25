@@ -20,16 +20,16 @@ function Slider(props) {
 
     return (
         <div className="slider">
-            <img src={Arrow}
+           {slidesLength>1 && <img src={Arrow}
                 className='arrow arrow--left'
                 onClick={() => changeSlide(-1)}
-            />
-            <img src={Arrow}
+            />}
+            {slidesLength>1 && <img src={Arrow}
                 className='arrow arrow--right'
                 onClick={() => changeSlide(1)}
-            />
+            />}
             <img src={props.slides[currentSlide]} className='sliderImage' />
-            <p className="indicator">{currentSlide+1}/{slidesLength}</p>
+            {slidesLength>1 && <p className="indicator">{currentSlide+1}/{slidesLength}</p>}
         </div>
     )
 }
