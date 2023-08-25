@@ -1,0 +1,15 @@
+@import url(_variables.scss);
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+}
+main {
+  margin: 0 100px;
+  padding-bottom: 209px;
+
+  @media (max-width: 1090px) {
+    margin: 0 20px;
+  }
+}

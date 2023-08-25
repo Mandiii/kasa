@@ -1,0 +1,76 @@
+.logement--infos {
+    color: #FF6060;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    @media (max-width: 855px) {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    & h1 {
+        margin: 0;
+    }
+
+    & .infos--host {
+        width: 200px;
+        margin-left: 50px;
+        @media (max-width: 855px) {
+            width: 100%;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        & .owner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: right;
+            font-size: 18px;
+            & img {
+                width: 64px;
+                height: auto;
+                border-radius: 50%;
+                margin-left: 10px;
+            }
+        }
+        & .rating {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            @media (max-width: 855px) {
+                width: 30%;
+            }
+        }
+    }
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    & > span {
+        background-color: #FF6060;
+        color: #fff;
+        display: inline-block;
+        min-width: 115px;
+        text-align: center;
+        padding: 7px;
+        border-radius: 10px;
+        font-size: 14px;
+        @media (max-width: 855px) {
+            width: calc(30% - 10px);
+            min-width: auto;
+        }
+    }
+}
+.logement--accordions {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    @media (max-width: 855px) {
+        flex-direction: column;
+    }
+}

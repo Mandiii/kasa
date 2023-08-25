@@ -1,0 +1,24 @@
+.errorPage {
+    color: #FF6060;
+    text-align: center;
+    & h1 {
+        font-size: 288px;
+        margin: 0;
+        @media (max-width: 855px) {
+            font-size: 96px;
+            margin-bottom: 100px;
+        }
+    }
+    & p {
+        font-size: 36px;
+        @media (max-width: 855px) {
+            font-size: 18px;
+            margin-bottom: 80px;
+        }
+    }
+    & a {
+        color: #FF6060;
+        margin: 70px 0;
+        display: block;
+    }
+}

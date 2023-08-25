@@ -1,0 +1,28 @@
+header {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1090px) {
+        padding: 30px 20px;
+      }
+
+    & nav a {
+        margin-left: 50px;
+        color: #FF6060;
+        text-decoration: none;
+        font-size: 24px;
+        @media (max-width: 650px) {
+            font-size: 12px;
+          }
+    }
+    & .active {
+        text-decoration: underline;
+    }
+    & img {
+        @media (max-width: 650px) {
+            width: 40%;
+          }
+    }
+}
