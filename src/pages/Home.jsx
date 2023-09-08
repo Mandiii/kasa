@@ -8,12 +8,6 @@ import logementData from '../data.json'
 
 function Home() {
 
-// React.useEffect(() => {
-//     fetch("data.json")
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-// }, [])
-
 const logements = logementData.map(logement => {
     return (
         <Link key={logement.id} to={`/logement/${logement.id}`}>
