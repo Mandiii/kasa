@@ -60,10 +60,6 @@
         padding: 7px;
         border-radius: 10px;
         font-size: 14px;
-        @media (max-width: 855px) {
-            width: calc(30% - 10px);
-            min-width: auto;
-        }
     }
 }
 .logement--accordions {
