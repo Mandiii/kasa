@@ -6,6 +6,7 @@ import logementData from '../data.json'
 import Slider from '../components/Slider'
 import StarRating from '../components/StarRating'
 import NoPage from "./NoPage";
+import Tag from "../components/Tag";
 
 function Logement() {
     const {id} = useParams()
@@ -15,7 +16,7 @@ function Logement() {
     }
     
     let tagList = currentLogement.tags.map((tag, index) =>
-        <span key={index}>{tag}</span>
+        <Tag text= {tag}/>
     )
 
     let equippements = currentLogement.equipments.map((equippement, index) =>
