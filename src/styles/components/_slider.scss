@@ -9,7 +9,8 @@
         height: 255px;
     }
     & .sliderImage {
-        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
     }
     & .arrow {
         position: absolute;
