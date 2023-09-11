@@ -1,27 +1,43 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Accordion from "../components/Accordion";
 import '../styles/pages/_logement.scss'
-import logementData from '../data.json'
 import Slider from '../components/Slider'
 import StarRating from '../components/StarRating'
-import NoPage from "./NoPage";
 import Tag from "../components/Tag";
 
 function Logement() {
-    const {id} = useParams()
-    let currentLogement = logementData.find(item => item.id === id)
-    if(!currentLogement) {
-        return <NoPage />
+    const {id} = useParams()    
+    const [currentLogement, setCurrentLogement] = React.useState()
+    const navigate = useNavigate()
+
+    React.useEffect(()=> {
+        fetch('/data.json')
+            .then(res=>res.json())
+            .then((data) => {
+                const logement = data.find(logement => logement.id === id)
+                if(logement === undefined) {
+                    navigate("./NoPage")
+                }
+                setCurrentLogement(logement)          
+            })
+    },[])
+    function createTags() {
+        return(currentLogement.tags.map((tag, index) =>
+        <Tag text= {tag}/>
+        ))
+    }
+    function createEquippements() {
+        return(currentLogement.equipments.map((equippement, index) =>
+        <span key={index}>{equippement}</span>
+    ))
+    }    
+    if (currentLogement === undefined) {
+        return null
+        
     }
     
-    let tagList = currentLogement.tags.map((tag, index) =>
-        <Tag text= {tag}/>
-    )
-
-    let equippements = currentLogement.equipments.map((equippement, index) =>
-        <span key={index}>{equippement}</span>
-    )
     return (
 
         <main>
@@ -34,7 +50,7 @@ function Logement() {
                   <h1>{currentLogement.title}</h1>
                   <p className="location">{currentLogement.location}</p>
                   <div className="tags">
-                    {tagList}
+                    {createTags()}
                   </div>
                 </div>
 
@@ -56,7 +72,7 @@ function Logement() {
                 />
                 <Accordion 
                     title="Équipements"
-                    text={equippements}
+                    text={createEquippements()}
                 />
             </div>
             
